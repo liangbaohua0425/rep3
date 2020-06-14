@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="classpath:applicationContext1.xml"></import>
+    <import resource="classpath:applicationContext2.xml"></import>
+    <!--无参构造实例化对象-->
+<!--    <bean id="userDao" class="com.my.dao.UserDaoImpl" scope="prototype"
+    init-method="init" destroy-method="destroy"></bean>-->
+
+    <!--静态工厂注入对象实例化对象-->
+    <!--<bean id="userDao" class="com.my.dao.StaticUserFactory" factory-method="getUserDao"/>-->
+
+    <!--工厂注入对象实例化对象-->
+    <bean id="factoryBean" class="com.my.dao.UserFactory"/>
+
+    <!--通过构造方法的方式依赖注入-->
+    <!--<bean id="userService" class="com.my.service.UserServiceImpl">
+        <constructor-arg name="userDao" ref="userDao"/>
+    </bean>-->
+
+    <!--通过set方法依赖注入-->
+
+</beans>

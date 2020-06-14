@@ -1,9 +1,26 @@
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 public class Main {
 
     @Test
     public void testHelloWrold() {
-        System.out.println("HelloWorld!");
+        ArrayList list = new ArrayList<String>();
+        listAdd(list,"上");
+        listAdd(list,"山");
+        listAdd(list,"打");
+        listAdd(list,"老");
+        listAdd(list,"虎");
+        listAdd(list,"吗");
+        System.out.println("upload!");
+    }
+
+    public void listAdd(ArrayList<String> list,String obj){
+        if(list.size() < 5){
+            list.add(obj);
+        }else{
+            System.out.println("集合已经满了");
+        }
     }
 }
